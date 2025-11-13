@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        {% if ejercicio == 1 %}
+        <h1>Resultado - Ejercicio 1</h1>
+        <div class="resultado">
+            <p><strong>Promedio:</strong> {{ promedio }}</p>
+            <p><strong>Asistencia:</strong> {{ asistencia }}%</p>
+            <p><strong>Estado:</strong>
+                <span class="{{ 'aprobado' if estado == 'APROBADO' else 'reprobado' }}">
+                    {{ estado }}
+                </span>
+            </p>
+        </div>
+
+        {% elif ejercicio == 2 %}
+        <h1>Resultado - Ejercicio 2</h1>
+        <div class="resultado">
+            <p><strong>Nombre más largo:</strong> {{ nombre_mas_largo }}</p>
+            <p><strong>Cantidad de caracteres:</strong> {{ longitud }}</p>
+
+            <h3>Resumen de todos los nombres:</h3>
+            <ul>
+                {% for nombre in todos_nombres %}
+                <li>{{ nombre.nombre }} - {{ nombre.longitud }} caracteres</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+
+        <div class="action-buttons">
+            {% if ejercicio == 1 %}
+            <a href="{{ url_for('ejercicio1') }}" class="btn btn-primary">Volver al Ejercicio 1</a>
+            {% else %}
+            <a href="{{ url_for('ejercicio2') }}" class="btn btn-primary">Volver al Ejercicio 2</a>
+            {% endif %}
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Volver al Menú Principal</a>
+        </div>
+    </div>
+</body>
+</html>
