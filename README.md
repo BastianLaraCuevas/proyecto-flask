@@ -1,6 +1,6 @@
 # Proyecto Flask - Ejercicios Académicos
 
-## Descripción proyecto paso a paso
+## Descripción
 Aplicación web desarrollada con Flask que contiene dos ejercicios:
 
 1. **Ejercicio 1**: Cálculo de promedio y estado académico
@@ -17,4 +17,4 @@ Aplicación web desarrollada con Flask que contiene dos ejercicios:
 
 1. **Clonar el repositorio**:
    ```bash
-   git clone [url-del-repositorio]
+   git clone https://github.com/BastianLaraCuevas/proyecto-flask.git
